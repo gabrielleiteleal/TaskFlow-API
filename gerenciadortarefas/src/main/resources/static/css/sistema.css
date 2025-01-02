@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.tabela,
+th,
+td {
+    border: 1px solid black;
+}
+
+.tabela {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    border-spacing: 20px;
+}
