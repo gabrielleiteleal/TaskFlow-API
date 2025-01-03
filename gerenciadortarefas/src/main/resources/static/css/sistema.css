@@ -1,23 +1,112 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100%;
+html, body {
+	height: 100%;
 }
 
-.tabela,
-th,
-td {
-    border: 1px solid black;
+.tabela, th, td {
+	border: 1px solid black;
 }
 
-.tabela {
-    margin: 0 auto;
-    width: 90%;
-    text-align: center;
-    border-spacing: 20px;
+.center {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 10px 20px 0 20px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background-color: orange;
+	gap: 10px;
+}
+
+.center .top {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.center .bottom {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	height: 90%;
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 25%;
+	height: 90%;
+	background-color: gray;
+	width: 25%;
+}
+
+.sidebar .container-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+	width: 150px;
+	height: auto;
+}
+
+.container-icon .user-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	overflow: hidden;
+	align-items: center;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: white;
+}
+
+.sidebar .user-info {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	justify-content: space-around;
+	background-color: white;
+	justify-content: space-around;
+}
+
+.user-info .user-id, .dados, .icons {
+	border: 1px solid black;
+}
+
+.icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.container-tabela {
+	width: 100%;
+	height: 90%;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.table-bordered {
+	background-color: white;
+}
+
+.table-bordered thead {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background-color: white;
+	border: 1px solid black;
 }

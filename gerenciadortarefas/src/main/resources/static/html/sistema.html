@@ -2,49 +2,184 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link href="../css/sistema.css" rel="stylesheet">
-    <title>Gerenciamento de tarefas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link href="../css/sistema.css" rel="stylesheet">
+<title>Gerenciamento de tarefas</title>
 </head>
 
 <body>
-    <h2>Sistema de gerenciamento de tarefas</h2>
 
-    <table class="tabela">
-        <tr>
-            <th>Tópicos</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Status</th>
-        </tr>
-        <!-- Aqui onde será implementado a dinâmica da tabela. Ex: -->
-        <tr>
-            <td>Tópico 1</td>
-            <td>Primeira tarefa</td>
-            <td>Descrição da tarefa 1</td>
-            <td>Completada</td>
-        </tr>
-        <tr>
-            <td>Tópico 2</td>
-            <td>Segunda tarefa</td>
-            <td>Descrição da tarefa 2</td>
-            <td>Em andamento</td>
-        </tr>
-        <!--  -->
-    </table>
+	<div class="center">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+		<div class="top">
+			<h2>Sistema de tarefas</h2>
+		</div>
+
+		<div class="bottom">
+			<div class="sidebar">
+				<div class="container-icon">
+					<div class="user-icon"></div>
+				</div>
+
+				<div class="user-info">
+					<div class="user-id">
+						<h3>Id</h3>
+					</div>
+					<div class="dados">
+						<h3>"Nome"</h3>
+						<h3>"E-mail"</h3>
+					</div>
+					<div class="icons">
+						<h3>Sair</h3>
+						<h3>Nova tarefa</h3>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="container-tabela">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th scope="col">Tópicos</th>
+							<th scope="col">Nome</th>
+							<th scope="col">Descrição</th>
+							<th scope="col">Status</th>
+							<th scope="col">Edição</th>
+						</tr>
+					</thead>
+
+					<!-- Aqui onde será implementado a dinâmica da tabela. Ex: -->
+					<tr>
+						<td>Tópico 1</td>
+						<td>Primeira tarefa</td>
+						<td>Descrição da tarefa 1</td>
+						<td>Completada</td>
+						<td>
+							<div>
+								<span>Editar/</span> <span>/Excluir</span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+					<tr>
+						<td>Tópico 2</td>
+						<td>Segunda tarefa</td>
+						<td>Descrição da tarefa 2</td>
+						<td>Em andamento</td>
+					</tr>
+
+					<!--  -->
+				</table>
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
