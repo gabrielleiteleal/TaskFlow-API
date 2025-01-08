@@ -1,9 +1,11 @@
 package com.gabriel.gerenciadortarefas.controller;
 
+import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -56,13 +58,22 @@ public class UsuarioController {
 	public ResponseEntity<?> validarUsuario(@RequestBody Usuario usuario) {
 		Boolean senhaValida = usuarioService.validarUsuario(usuario.getEmail(), usuario.getSenha());
 		Map<String, String> response = new HashMap<>();
+//		HttpHeaders headers = new HttpHeaders();
 
 		if (!senhaValida) {
 			response.put("message", "Credenciais inválidas");
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
 		}
-		response.put("message", "Login realizado com sucesso!!");
-		return ResponseEntity.status(200).body(response);
+		
+		response.put("redirectUrl", "/usuario/sistema");
+		
+//		headers.setLocation(URI.create("/sistema"));
+		return ResponseEntity.ok(response);
+	}
+	
+	@GetMapping("/sistema")
+	public String sistema() {
+		return "sistema";
 	}
 
 }

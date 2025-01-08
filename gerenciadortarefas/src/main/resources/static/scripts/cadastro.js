@@ -41,17 +41,17 @@ async function enviar() {
 			email: email.value,
 			senha: senha.value
 		});
-		
-		if(response.ok){
+
+		if (response.ok) {
 			const data = response.json;
 			alert('Cadastro realizado com sucesso');
 			console.log(data);
 			limpar();
 			window.location.replace("../index.html");
-		}else{
+		} else {
 			alert('Este e-mail já existe');
 		}
-		
+
 
 
 	} catch (error) {
@@ -61,6 +61,27 @@ async function enviar() {
 
 
 
+}
+
+function atualizarStatus(selectElement) {
+	const valorSelecionado = selectElement.value;
+	const cell = selectElement.parentElement;
+
+	cell.classList.remove('status-concluido', 'status-em-andamento', 'status-nao-iniciado');
+
+	if (valorSelecionado === 'concluido') {
+		cell.classList.add('status-concluido');
+	} else if (valorSelecionado === 'em-andamento') {
+		cell.classList.add('status-em-andamento');
+	} else if (valorSelecionado === 'nao-iniciado') {
+		cell.classList.add('status-nao-iniciado');
+	}
+
+
+}
+
+function sair() {
+	window.location.replace('../index.html');
 }
 
 function limpar() {

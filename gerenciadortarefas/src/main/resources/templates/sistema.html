@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
 
 <head>
 <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
-<link href="../css/sistema.css" rel="stylesheet">
+<link href="../static/css/sistema.css" rel="stylesheet">
 <title>Gerenciamento de tarefas</title>
 </head>
 
@@ -35,10 +35,13 @@
 						<h3>"E-mail"</h3>
 					</div>
 					<div class="icons">
-						<h3>Sair</h3>
-						<h3>Nova tarefa</h3>
+						<button onclick="sair()">
+							<img src="../assets/icons/box-arrow-left.svg">
+						</button>
+						<button onclick="">
+							<img src="../assets/icons/plus-square-fill.svg">
+						</button>
 					</div>
-
 				</div>
 			</div>
 
@@ -46,7 +49,7 @@
 				<table class="table table-bordered">
 					<thead>
 						<tr>
-							<th scope="col">Tópicos</th>
+							<th scope="col">Tarefas</th>
 							<th scope="col">Nome</th>
 							<th scope="col">Descrição</th>
 							<th scope="col">Status</th>
@@ -59,10 +62,16 @@
 						<td>Tópico 1</td>
 						<td>Primeira tarefa</td>
 						<td>Descrição da tarefa 1</td>
-						<td>Completada</td>
+						<td><select onchange="atualizarStatus(this)">
+								<option value="concluido">Concluído</option>
+								<option value="em-andamento">Em andamento</option>
+								<option value="nao-iniciado">Não iniciado</option>
+						</select></td>
 						<td>
 							<div>
-								<span>Editar/</span> <span>/Excluir</span>
+								<a class="editar"> <img
+									src="../assets/icons/pencil-square.svg"></a> <a
+									class="excluir"><img src="../assets/icons/trash3-fill.svg"></a>
 							</div>
 						</td>
 					</tr>
@@ -168,7 +177,7 @@
 
 	</div>
 
-
+	<script src="../scripts/cadastro.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>

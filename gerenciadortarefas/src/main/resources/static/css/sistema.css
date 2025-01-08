@@ -65,15 +65,23 @@ html, body {
 	border-radius: 50%;
 	overflow: hidden;
 	align-items: center;
-	width: 140px;
-	height: 140px;
+	width: 150px;
+	height: 150px;
 	border-radius: 50%;
 	overflow: hidden;
 	background-color: white;
 }
 
-.sidebar .user-info {
+.user-info, .user-id, .dados, .icons{
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 90%;
+	border: 1px solid black;
+}
+
+.user-info {
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
@@ -82,14 +90,27 @@ html, body {
 	justify-content: space-around;
 }
 
-.user-info .user-id, .dados, .icons {
-	border: 1px solid black;
+.user-id{
+	border-radius: 20px;
+}
+
+.dados{
+	flex-direction: column;
+	height: auto;
 }
 
 .icons {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+}
+
+.icons button{
+	width: 50px;
+	height: 35px;
+	border-radius: 5px;
+	border: none;
+	background-color: #97c9ff;
 }
 
 .container-tabela {
@@ -109,4 +130,25 @@ html, body {
 	z-index: 1;
 	background-color: white;
 	border: 1px solid black;
+}
+
+.table-borderes select{
+	width: 100%;
+	height: 100%;
+	
+}
+
+.status-concluido {
+	background-color: #d4edda;
+	color: #155724;
+}
+
+.status-em-andamento {
+	background-color: #fff3cd;
+	color: #856404;
+}
+
+.status-nao-iniciado {
+	background-color: gray;
+	color: black;
 }

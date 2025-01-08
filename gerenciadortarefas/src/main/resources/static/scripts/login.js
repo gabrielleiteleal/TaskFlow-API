@@ -38,11 +38,13 @@ async function validar() {
 			const data = await response.json();
 			alert("Login realizado com sucesso!");
 			console.log(data);
-			window.location.href = "/html/sistema.html";
+			window.location.href = data.redirectUrl;
 //			document.forms["formLogin"].submit();
 			limpar();
 		} else {
-			alert('Credendiais inválidas');
+			const errorData = await repsonse.json();
+			console.log('Erro: ', errorData.message);
+			alert('Credendiais inválidas - JS');
 		}
 
 	} catch (error) {
