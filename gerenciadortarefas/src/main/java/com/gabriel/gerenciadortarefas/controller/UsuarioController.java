@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gabriel.gerenciadortarefas.model.Usuario;
 import com.gabriel.gerenciadortarefas.service.UsuarioService;
 
-//import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession;
 
 @RestController
 @CrossOrigin("*")
@@ -56,7 +56,7 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/validacao")
-	public ResponseEntity<?> validarUsuario(@RequestBody Usuario usuario) {
+	public ResponseEntity<?> validarUsuario(@RequestBody Usuario usuario, HttpSession session) {
 		Boolean senhaValida = usuarioService.validarUsuario(usuario.getEmail(), usuario.getSenha());
 		Map<String, String> response = new HashMap<>();
 //		HttpHeaders headers = new HttpHeaders();
@@ -66,8 +66,8 @@ public class UsuarioController {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
 		}
 		
-//		Usuario usuarioEncontrado = usuarioService.buscarPorEmail(usuario.getEmail());
-//		session.setAttribute("usuarioLogado", usuarioEncontrado);
+		Usuario usuarioEncontrado = usuarioService.buscarPorEmail(usuario.getEmail());
+		session.setAttribute("usuarioLogado", usuarioEncontrado);
 
 		response.put("redirectUrl", "/sistema");
 

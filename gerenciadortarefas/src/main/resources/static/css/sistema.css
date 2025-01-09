@@ -72,7 +72,7 @@ html, body {
 	background-color: white;
 }
 
-.user-info, .user-id, .dados, .icons{
+.user-info, .user-id, .dados, .icons {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -90,27 +90,54 @@ html, body {
 	justify-content: space-around;
 }
 
-.user-id{
+.user-id {
 	border-radius: 20px;
 }
 
-.dados{
+.user-id h3 {
+	font-size: 20px;
+}
+
+.dados {
 	flex-direction: column;
-	height: auto;
+	height: 80px;
+	border-radius: 10px;
+}
+
+.dados .userName, .dados .userEmail {
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 10px;
+	width: 100%;
+	gap: 10px;
+}
+
+.dados .userName h3, .dados .userEmail h3 {
+	font-size: 20px;
 }
 
 .icons {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	border: none;
 }
 
-.icons button{
+.icons button {
 	width: 50px;
 	height: 35px;
 	border-radius: 5px;
-	border: none;
+	border: 1px solid black;
 	background-color: #97c9ff;
+}
+
+.icons button:hover{
+	cursor: pointer;
+	background-color: #7dbbff;
+}
+
+.icons button:active{
+	background-color: #66aeff;
 }
 
 .container-tabela {
@@ -132,10 +159,9 @@ html, body {
 	border: 1px solid black;
 }
 
-.table-borderes select{
+.table-borderes select {
 	width: 100%;
 	height: 100%;
-	
 }
 
 .status-concluido {
@@ -153,7 +179,7 @@ html, body {
 	color: black;
 }
 
-#janela-tarefas{
+#janela-tarefas {
 	display: none;
 	position: absolute;
 	top: 50%;
@@ -166,7 +192,7 @@ html, body {
 	color: white;
 }
 
-#fechar-janela{
+#fechar-janela {
 	float: right;
 	width: auto;
 	height: 35px;

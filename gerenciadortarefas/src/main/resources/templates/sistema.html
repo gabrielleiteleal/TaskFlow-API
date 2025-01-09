@@ -28,11 +28,19 @@
 
 				<div class="user-info">
 					<div class="user-id">
-						<h3>Id</h3>
+						<h3>Id:</h3>
+						<h3 th:text=${usuario.id}></h3>
 					</div>
 					<div class="dados">
-						<h3>"nome"</h3>
-						<h3>"E-mail"</h3>
+						<div class="userName">
+							<h3>Nome:</h3>
+							<h3 th:text="${usuario.nome}"></h3>
+						</div>
+						<div class="userEmail">
+							<h3>Email:</h3>
+							<h3 th:text="${usuario.email}"></h3>
+						</div>
+
 					</div>
 					<div class="icons">
 						<button onclick="sair()">
@@ -87,86 +95,6 @@
 						<td>Descrição da tarefa 2</td>
 						<td>Em andamento</td>
 					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-
 					<!--  -->
 				</table>
 			</div>
@@ -178,11 +106,11 @@
 					<div class="tarefaForm">
 						<form>
 							<div class="nome">
-								<label>Nome* </label> <input type="text" id="nome"
+								<label>Nome* </label> <input type="text" id="nomeTarefa"
 									required="required">
 							</div>
 							<div class="desc">
-								<label>Descrição </label> <input type="text" id="desc">
+								<label>Descrição </label> <input type="text" id="descTarefa">
 							</div>
 						</form>
 					</div>
