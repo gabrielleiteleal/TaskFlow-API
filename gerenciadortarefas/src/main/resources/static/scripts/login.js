@@ -42,7 +42,7 @@ async function validar() {
 //			document.forms["formLogin"].submit();
 			limpar();
 		} else {
-			const errorData = await repsonse.json();
+			const errorData = await response.json();
 			console.log('Erro: ', errorData.message);
 			alert('Credendiais inválidas - JS');
 		}

@@ -1,11 +1,10 @@
 package com.gabriel.gerenciadortarefas.controller;
 
-import java.net.URI;
+//import java.net.http.HttpHeaders;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gabriel.gerenciadortarefas.model.Usuario;
 import com.gabriel.gerenciadortarefas.service.UsuarioService;
+
+//import jakarta.servlet.http.HttpSession;
 
 @RestController
 @CrossOrigin("*")
@@ -65,15 +66,13 @@ public class UsuarioController {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
 		}
 		
-		response.put("redirectUrl", "/usuario/sistema");
-		
+//		Usuario usuarioEncontrado = usuarioService.buscarPorEmail(usuario.getEmail());
+//		session.setAttribute("usuarioLogado", usuarioEncontrado);
+
+		response.put("redirectUrl", "/sistema");
+
 //		headers.setLocation(URI.create("/sistema"));
 		return ResponseEntity.ok(response);
-	}
-	
-	@GetMapping("/sistema")
-	public String sistema() {
-		return "sistema";
 	}
 
 }

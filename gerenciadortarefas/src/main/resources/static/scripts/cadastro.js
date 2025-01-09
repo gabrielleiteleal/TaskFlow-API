@@ -59,30 +59,10 @@ async function enviar() {
 		alert('Erro ao fazer cadastro');
 	}
 
-
-
 }
 
-function atualizarStatus(selectElement) {
-	const valorSelecionado = selectElement.value;
-	const cell = selectElement.parentElement;
-
-	cell.classList.remove('status-concluido', 'status-em-andamento', 'status-nao-iniciado');
-
-	if (valorSelecionado === 'concluido') {
-		cell.classList.add('status-concluido');
-	} else if (valorSelecionado === 'em-andamento') {
-		cell.classList.add('status-em-andamento');
-	} else if (valorSelecionado === 'nao-iniciado') {
-		cell.classList.add('status-nao-iniciado');
-	}
 
 
-}
-
-function sair() {
-	window.location.replace('../index.html');
-}
 
 function limpar() {
 	nome.value = "";

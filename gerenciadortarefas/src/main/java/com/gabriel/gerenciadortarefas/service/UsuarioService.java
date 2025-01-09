@@ -1,7 +1,6 @@
 package com.gabriel.gerenciadortarefas.service;
 
 import java.util.List;
-
 import java.util.Optional;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -55,6 +54,10 @@ public class UsuarioService {
 			return passwordEncoder.matches(senha, senhaArmezenada);
 		}
 		return false;
+	}
+	
+	public Usuario buscarPorEmail(String email) {
+		return repository.findByEmail(email).orElse(new Usuario());
 	}
 
 }

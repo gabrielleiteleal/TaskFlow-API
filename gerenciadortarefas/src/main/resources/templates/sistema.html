@@ -8,7 +8,7 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
-<link href="../static/css/sistema.css" rel="stylesheet">
+<link href="css/sistema.css" rel="stylesheet">
 <title>Gerenciamento de tarefas</title>
 </head>
 
@@ -31,14 +31,14 @@
 						<h3>Id</h3>
 					</div>
 					<div class="dados">
-						<h3>"Nome"</h3>
+						<h3>"nome"</h3>
 						<h3>"E-mail"</h3>
 					</div>
 					<div class="icons">
 						<button onclick="sair()">
 							<img src="../assets/icons/box-arrow-left.svg">
 						</button>
-						<button onclick="">
+						<button id="novaTarefa" onclick="novaTarefa()">
 							<img src="../assets/icons/plus-square-fill.svg">
 						</button>
 					</div>
@@ -171,13 +171,31 @@
 				</table>
 			</div>
 
+			<div id="janela-tarefas">
+				<div class="conteudo">
+					<button id="fechar-janela">Fechar</button>
+					<h2>Adicionar nova tarefa</h2>
+					<div class="tarefaForm">
+						<form>
+							<div class="nome">
+								<label>Nome* </label> <input type="text" id="nome"
+									required="required">
+							</div>
+							<div class="desc">
+								<label>Descrição </label> <input type="text" id="desc">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
 		</div>
 
 
 
 	</div>
 
-	<script src="../scripts/cadastro.js"></script>
+	<script src="../scripts/sistema.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
