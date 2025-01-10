@@ -71,4 +71,10 @@ public class Tarefa {
 		this.id_usuario = id_usuario;
 	}
 
+	@Override
+	public String toString() {
+		return "Tarefa [id_tarefa=" + id_tarefa + ", titulo=" + titulo + ", descricao=" + descricao + ", status="
+				+ status + ", id_usuario=" + id_usuario + "]";
+	}
+
 }

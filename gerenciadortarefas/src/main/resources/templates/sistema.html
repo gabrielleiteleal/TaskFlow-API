@@ -58,44 +58,32 @@
 					<thead>
 						<tr>
 							<th scope="col">Tarefas</th>
-							<th scope="col">Nome</th>
+							<th scope="col">Título</th>
 							<th scope="col">Descrição</th>
 							<th scope="col">Status</th>
 							<th scope="col">Edição</th>
 						</tr>
 					</thead>
 
-					<!-- Aqui onde será implementado a dinâmica da tabela. Ex: -->
-					<tr>
-						<td>Tópico 1</td>
-						<td>Primeira tarefa</td>
-						<td>Descrição da tarefa 1</td>
-						<td><select onchange="atualizarStatus(this)">
-								<option value="concluido">Concluído</option>
-								<option value="em-andamento">Em andamento</option>
-								<option value="nao-iniciado">Não iniciado</option>
-						</select></td>
+					<tr th:each="tarefas: ${tarefas}">
+						<td th:text="${tarefas.id_tarefa}"></td>
+						<td th:text="${tarefas.titulo}"></td>
+						<td th:text="${tarefas.descricao}"></td>
+						<td th:text="${tarefas.status}"></td>
 						<td>
 							<div>
-								<a class="editar"> <img
-									src="../assets/icons/pencil-square.svg"></a> <a
-									class="excluir"><img src="../assets/icons/trash3-fill.svg"></a>
+								<button class="editar" id="editarTarefa" onclick="editarTarefa()">
+									<img src="../assets/icons/pencil-square.svg">
+								</button>
+								<button class="excluir" 
+								th:attr="data-id=${tarefas.id_tarefa}"
+								onclick="deletarTarefa(this)">
+								<img src="../assets/icons/trash3-fill.svg">
+								</button>
 							</div>
 						</td>
 					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<tr>
-						<td>Tópico 2</td>
-						<td>Segunda tarefa</td>
-						<td>Descrição da tarefa 2</td>
-						<td>Em andamento</td>
-					</tr>
-					<!--  -->
+
 				</table>
 			</div>
 
@@ -104,14 +92,24 @@
 					<button id="fechar-janela">Fechar</button>
 					<h2>Adicionar nova tarefa</h2>
 					<div class="tarefaForm">
-						<form>
+						<form id="formTarefa">
 							<div class="nome">
-								<label>Nome* </label> <input type="text" id="nomeTarefa"
-									required="required">
+								<label for="tituloTarefa">Titulo* </label> <input type="text"
+									id="tituloTarefa" required="required">
 							</div>
 							<div class="desc">
-								<label>Descrição </label> <input type="text" id="descTarefa">
+								<label for="descTarefa">Descrição </label> <input type="text"
+									id="descTarefa">
 							</div>
+							<div class="status">
+								<select id="statusTarefa">
+									<option selected="selected">Selecione o status</option>
+									<option value="concluido">Concluído</option>
+									<option value="em-andamento">Em andamento</option>
+									<option value="nao-iniciado">Não iniciado</option>
+								</select>
+							</div>
+							<button onclick="criarTarefa()">Enviar</button>
 						</form>
 					</div>
 				</div>

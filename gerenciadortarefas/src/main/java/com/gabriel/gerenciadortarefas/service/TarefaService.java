@@ -26,6 +26,16 @@ public class TarefaService {
 		return novaTarefa;
 	}
 	
+	public Tarefa editarTarefa(Tarefa tarefa) {
+		Tarefa novaTarefa = repository.save(tarefa);
+		return novaTarefa;
+	}
+	
+	public Boolean excluirTarefa (Integer id) {
+		repository.deleteById(id);
+		return true;
+	}
+	
 	
 
 }

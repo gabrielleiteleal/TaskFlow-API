@@ -70,9 +70,10 @@ public class UsuarioController {
 		session.setAttribute("usuarioLogado", usuarioEncontrado);
 
 		response.put("redirectUrl", "/sistema");
+		String redirect = "/sistema";
 
 //		headers.setLocation(URI.create("/sistema"));
-		return ResponseEntity.ok(response);
+		return ResponseEntity.ok(Map.of("redirectUrl", redirect, "id", usuarioEncontrado.getId()));
 	}
 
 }

@@ -36,9 +36,12 @@ async function validar() {
 
 		if (response.ok) {
 			const data = await response.json();
+			const id_usuario = data.id;
+			localStorage.setItem('id_usuario', id_usuario);
 			alert("Login realizado com sucesso!");
 			console.log(data);
 			window.location.href = data.redirectUrl;
+			
 //			document.forms["formLogin"].submit();
 			limpar();
 		} else {
