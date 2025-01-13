@@ -37,6 +37,11 @@ public class TarefaController {
 	public ResponseEntity<List<Tarefa>> listarTarefas() {
 		return ResponseEntity.status(200).body(tarefaService.listarTarefas());
 	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<Tarefa> recuperarTarefa(@PathVariable Integer id) {
+		return ResponseEntity.status(200).body(tarefaService.recuperarTarefa(id));
+	}
 
 	@PostMapping("/criar")
 	public ResponseEntity<?> criarTarefa(@RequestBody TarefaDTO tarefaDTO) {
@@ -62,6 +67,7 @@ public class TarefaController {
 	public ResponseEntity<?> editarTarefa (@RequestBody TarefaDTO tarefaDTO){
 		
 		Tarefa tarefa = new Tarefa();
+		tarefa.setId_tarefa(tarefaDTO.getId_tarefa());
 		tarefa.setTitulo(tarefaDTO.getTitulo());
 		tarefa.setDescricao(tarefaDTO.getDescricao());
 		tarefa.setStatus(tarefaDTO.getStatus());
@@ -74,9 +80,9 @@ public class TarefaController {
 
 		tarefa.setUsuario(usuario);
 
-		tarefaService.criarTarefa(tarefa);
+		tarefaService.editarTarefa(tarefa);
 
-		return ResponseEntity.status(201).body(tarefaService.criarTarefa(tarefa));
+		return ResponseEntity.status(201).body(tarefaService.editarTarefa(tarefa));
 	}
 	
 	@DeleteMapping("/{id}")

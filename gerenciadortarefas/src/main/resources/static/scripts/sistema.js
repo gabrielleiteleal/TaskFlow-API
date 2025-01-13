@@ -3,62 +3,50 @@ const tituloTarefa = document.getElementById('tituloTarefa');
 const descTarefa = document.getElementById('descTarefa');
 const statusTarefa = document.getElementById('statusTarefa');
 const id_usuario = localStorage.getItem('id_usuario');
+const janela = document.getElementById('janela-tarefas');
+//const idTarefa = button.getAttribute('data-id');
 
-function novaTarefa(){
+function abrirJanela(acao, button = null) {
 
-	const novaTarefa = document.getElementById('novaTarefa');
-	const janela = document.getElementById('janela-tarefas');
+
 	const fechar = document.getElementById('fechar-janela');
 
-	novaTarefa.onclick = function() {
-		janela.style.display = "block";
-	}
+
+	janela.style.display = "block";
 
 	fechar.onclick = function() {
 		janela.style.display = "none";
+		formTarefa.reset();
 	}
 
-	//	window.onclick = function(event) {
-	//		if(event.target == janela){
-	//			janela.style.display = "none";
-	//		}
-	//	}
-
-}
-
-function editarTarefa(){
-
-	const editarTarefa = document.getElementById('editarTarefa');
-	const janela = document.getElementById('janela-tarefas');
-	const fechar = document.getElementById('fechar-janela');
-
-	editarTarefa.onclick = function() {
-		janela.style.display = "block";
+	if (acao === 'editar' && button) {
+		const idTarefa = button.getAttribute('data-id');
+		recuperarTarefa(idTarefa);
 	}
 
-	fechar.onclick = function() {
-		janela.style.display = "none";
-	}
 
-	//	window.onclick = function(event) {
-	//		if(event.target == janela){
-	//			janela.style.display = "none";
-	//		}
-	//	}
+	formTarefa.onsubmit = function(event) {
+		event.preventDefault();
+
+		if (acao === 'criar') {
+			criarTarefa();
+
+		} else if (acao === 'editar') {
+			recuperarTarefa(idTarefa);
+		}
+	}
 
 }
 
 async function criarTarefa() {
 
-	if (tituloTarefa === "") {
+	if (tituloTarefa.value.trim() === "") {
 		alert('Preencha o campo Título!');
-		titulo.focus();
+		tituloTarefa.focus();
 		return false;
 	}
 
-
 	try {
-
 		const response = await fetch('http://localhost:8080/tarefa/criar', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -72,13 +60,14 @@ async function criarTarefa() {
 
 		console.log({ titulo: tituloTarefa.value, desc: descTarefa.value, status: statusTarefa.value, id: id_usuario })
 		if (response.ok) {
-			alet('Nova tarefa adicinonada com sucesso!');
+			alert('Nova tarefa adicinonada com sucesso!');
+			formTarefa.reset();
+			janela.style.display = "none";
 		} else {
 			const errorData = await response.json();
 			console.log('Erro: ', errorData.message);
-			alert('tafera nao adicionada');
+			alert('tafera não adicionada');
 		}
-
 
 	} catch (error) {
 		console.log('Erro ao criar nova tarefa: ' + error);
@@ -87,13 +76,13 @@ async function criarTarefa() {
 
 }
 
-async function editarTarefa() {
-	
-	novaTarefa();
+async function editarTarefa(idTarefa) {
 
-	if (tituloTarefa === "") {
+	//	recuperarTarefa(idTarefa);
+
+	if (tituloTarefa.value.trim() === "") {
 		alert('Preencha o campo Título!');
-		titulo.focus();
+		tituloTarefa.focus();
 		return false;
 	}
 
@@ -104,6 +93,7 @@ async function editarTarefa() {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
+				id_tarefa: idTarefa,
 				titulo: tituloTarefa.value,
 				descricao: descTarefa.value,
 				status: statusTarefa.value,
@@ -111,9 +101,11 @@ async function editarTarefa() {
 			})
 		});
 
-		console.log({ titulo: tituloTarefa.value, desc: descTarefa.value, status: statusTarefa.value, id: id_usuario })
+		console.log({ id_tarefa: idTarefa, titulo: tituloTarefa.value, desc: descTarefa.value, status: statusTarefa.value, id: id_usuario })
 		if (response.ok) {
-			alet('Tarefa editada com sucesso!');
+			alert('Tarefa editada com sucesso!');
+			formTarefa.reset();
+			janela.style.display = "none";
 		} else {
 			const errorData = await response.json();
 			console.log('Erro: ', errorData.message);
@@ -123,7 +115,7 @@ async function editarTarefa() {
 
 	} catch (error) {
 		console.log('Erro ao editar tarefa: ' + error);
-		alert('Erro ao se conectar com a API');
+		alert('Erro ao se conectar com a API (editarTarefa())');
 	}
 
 }
@@ -144,7 +136,7 @@ async function deletarTarefa(button) {
 
 			if (response.ok) {
 				alert('Tarefa excluida com sucesso!');
-//				atualizarListaTarefas();
+				//				atualizarListaTarefas();
 			} else {
 				const errorData = await response.json();
 				console.log('Erro: ', errorData.message);
@@ -156,6 +148,37 @@ async function deletarTarefa(button) {
 			alert('Erro ao se conectar com a API');
 		}
 
+	}
+
+}
+
+async function recuperarTarefa(idTarefa) {
+
+	try {
+		const response = await fetch('http://localhost:8080/tarefa/' + idTarefa, {
+			method: 'GET',
+			headers: { 'Content-Type': 'application/json' }
+		})
+
+		if (response.ok) {
+			const tarefa = await response.json();
+			tituloTarefa.value = tarefa.titulo;
+			descTarefa.value = tarefa.descricao;
+			statusTarefa.value = tarefa.status;
+			formTarefa.onsubmit = function(event) {
+				event.preventDefault();
+				editarTarefa(idTarefa);
+			}
+
+		} else {
+			const errorData = await response.json();
+			console.error('Erro ao recuperar tarefa: ', errorData.message);
+			alert('Erro ao recuperar os dados da tarefa');
+		}
+
+	} catch (error) {
+		console.error('Erro ao conectar-se com a API: ', error);
+		alert('Erro ao se conectar com o servidor.');
 	}
 
 }
@@ -175,50 +198,6 @@ function atualizarStatus(selectElement) {
 		cell.classList.add('status-nao-iniciado');
 	}
 }
-
-//async function atualizarListaTarefas() {
-//
-//	const response = await fetch('http://localhost:8080/tarefa');
-//	const tarefas = await response.json();
-//
-//	const tabelaTarefas = document.getElementById('table-bordered');
-//	tabelaTarefas.innerHTML = '';
-//	tabelaTarefas.innerHTML = `	
-//						<thead>
-//							<tr>
-//								<th scope="col">Tarefas</th>
-//								<th scope="col">Título</th>
-//								<th scope="col">Descrição</th>
-//								<th scope="col">Status</th>
-//								<th scope="col">Edição</th>
-//							</tr>
-//						</thead>`;
-//
-//	tarefas.forEach(tarefas => {
-//		const tr = document.createElement("tr");
-//		tr.innerHTML = `		
-//			<tr th:each="tarefas: ${tarefas}">
-//			<td th:text="${tarefas.id_tarefa}"></td>
-//			<td th:text="${tarefas.titulo}"></td>
-//			<td th:text="${tarefas.descricao}"></td>
-//			<td th:text="${tarefas.status}"></td>
-//			<td>
-//				<div>
-//					<button class="editar">
-//						<img src="../assets/icons/pencil-square.svg">
-//					</button>
-//					<button class="excluir" 
-//					th:attr="data-id=${tarefas.id_tarefa}"
-//					onclick="deletarTarefa(this)">
-//					<img src="../assets/icons/trash3-fill.svg">
-//					</button>
-//				</div>
-//			</td>
-//		</tr>`;
-//		tabelaTarefas.appendChild(tr);
-//	});
-//
-//}
 
 function sair() {
 	window.location.replace('../index.html');

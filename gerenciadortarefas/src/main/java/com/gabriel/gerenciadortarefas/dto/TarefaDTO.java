@@ -2,6 +2,7 @@ package com.gabriel.gerenciadortarefas.dto;
 
 public class TarefaDTO {
 
+	private Integer id_tarefa;
 	private String titulo;
 	private String descricao;
 	private String status;
@@ -37,6 +38,14 @@ public class TarefaDTO {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Integer getId_tarefa() {
+		return id_tarefa;
+	}
+
+	public void setId_tarefa(Integer id_tarefa) {
+		this.id_tarefa = id_tarefa;
 	}
 
 }

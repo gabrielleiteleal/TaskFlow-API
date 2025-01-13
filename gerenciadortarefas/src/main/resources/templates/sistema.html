@@ -46,7 +46,7 @@
 						<button onclick="sair()">
 							<img src="../assets/icons/box-arrow-left.svg">
 						</button>
-						<button id="novaTarefa" onclick="novaTarefa()">
+						<button id="btnCriarTarefa" onclick="abrirJanela('criar')">
 							<img src="../assets/icons/plus-square-fill.svg">
 						</button>
 					</div>
@@ -72,7 +72,7 @@
 						<td th:text="${tarefas.status}"></td>
 						<td>
 							<div>
-								<button class="editar" id="editarTarefa" onclick="editarTarefa()">
+								<button class="editar" id="btnEditarTarefa" th:attr="data-id=${tarefas.id_tarefa}" onclick="abrirJanela('editar', this)">
 									<img src="../assets/icons/pencil-square.svg">
 								</button>
 								<button class="excluir" 
@@ -109,7 +109,7 @@
 									<option value="nao-iniciado">Não iniciado</option>
 								</select>
 							</div>
-							<button onclick="criarTarefa()">Enviar</button>
+							<button id="btn-form">Enviar</button>
 						</form>
 					</div>
 				</div>

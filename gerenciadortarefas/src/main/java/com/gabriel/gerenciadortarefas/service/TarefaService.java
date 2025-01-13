@@ -20,6 +20,10 @@ public class TarefaService {
 		List<Tarefa> lista = repository.findAll();
 		return lista;
 	}
+	
+	public Tarefa recuperarTarefa(Integer id) {
+		return repository.findById(id).orElse(new Tarefa());
+	}
 
 	public Tarefa criarTarefa(Tarefa tarefa) {
 		Tarefa novaTarefa = repository.save(tarefa);
