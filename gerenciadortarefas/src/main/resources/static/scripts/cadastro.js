@@ -36,12 +36,6 @@ async function enviar() {
 			})
 		});
 
-		console.log({
-			nome: nome.value,
-			email: email.value,
-			senha: senha.value
-		});
-
 		if (response.ok) {
 			const data = response.json;
 			alert('Cadastro realizado com sucesso');
@@ -60,9 +54,6 @@ async function enviar() {
 	}
 
 }
-
-
-
 
 function limpar() {
 	nome.value = "";

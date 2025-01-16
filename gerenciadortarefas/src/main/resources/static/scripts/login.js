@@ -41,21 +41,17 @@ async function validar() {
 			alert("Login realizado com sucesso!");
 			console.log(data);
 			window.location.href = data.redirectUrl;
-			
-//			document.forms["formLogin"].submit();
 			limpar();
 		} else {
 			const errorData = await response.json();
 			console.log('Erro: ', errorData.message);
-			alert('Credendiais inválidas - JS');
+			alert('Credendiais inválidas');
 		}
 
 	} catch (error) {
 		console.error('Erro ao fazer login: ', error);
 		alert('Erro ao se conectar com o servidor');
 	}
-
-
 }
 
 function limpar() {

@@ -22,8 +22,8 @@
 
 		<div class="bottom">
 			<div class="sidebar">
-				<div class="container-icon">
-					<div class="user-icon"></div>
+				<div class="container-img">
+					<div class="user-img"></div>
 				</div>
 
 				<div class="user-info">
@@ -54,7 +54,7 @@
 			</div>
 
 			<div class="container-tabela">
-				<table class="table table-bordered">
+				<table class="table table-bordered table-striped table-hover">
 					<thead>
 						<tr>
 							<th scope="col">Tarefas</th>
@@ -65,55 +65,91 @@
 						</tr>
 					</thead>
 
-					<tr th:each="tarefas: ${tarefas}">
-						<td th:text="${tarefas.id_tarefa}"></td>
-						<td th:text="${tarefas.titulo}"></td>
-						<td th:text="${tarefas.descricao}"></td>
-						<td th:text="${tarefas.status}"></td>
-						<td>
-							<div>
-								<button class="editar" id="btnEditarTarefa" th:attr="data-id=${tarefas.id_tarefa}" onclick="abrirJanela('editar', this)">
-									<img src="../assets/icons/pencil-square.svg">
-								</button>
-								<button class="excluir" 
-								th:attr="data-id=${tarefas.id_tarefa}"
-								onclick="deletarTarefa(this)">
-								<img src="../assets/icons/trash3-fill.svg">
-								</button>
-							</div>
-						</td>
-					</tr>
+					<tbody>
 
+						<tr th:each="tarefas, iterStat : ${tarefas}">
+							<td th:text="${iterStat.index + 1}"></td>
+							<td th:text="${tarefas.titulo}"></td>
+							<td th:text="${tarefas.descricao}"></td>
+							<td th:text="${tarefas.status}"></td>
+							<td>
+								<div class="buttons-edit">
+									<button class="editar" id="btnEditarTarefa"
+										th:attr="data-id=${tarefas.id_tarefa}"
+										onclick="abrirJanela('editar', this)">
+										<img src="../assets/icons/pencil-square.svg">
+									</button>
+									<button class="excluir" th:attr="data-id=${tarefas.id_tarefa}"
+										onclick="deletarTarefa(this)">
+										<img src="../assets/icons/trash3-fill.svg">
+									</button>
+								</div>
+							</td>
+						</tr>
+
+					</tbody>
 				</table>
-			</div>
 
-			<div id="janela-tarefas">
-				<div class="conteudo">
-					<button id="fechar-janela">Fechar</button>
-					<h2>Adicionar nova tarefa</h2>
-					<div class="tarefaForm">
-						<form id="formTarefa">
-							<div class="nome">
-								<label for="tituloTarefa">Titulo* </label> <input type="text"
-									id="tituloTarefa" required="required">
-							</div>
-							<div class="desc">
-								<label for="descTarefa">Descrição </label> <input type="text"
-									id="descTarefa">
-							</div>
-							<div class="status">
-								<select id="statusTarefa">
-									<option selected="selected">Selecione o status</option>
-									<option value="concluido">Concluído</option>
-									<option value="em-andamento">Em andamento</option>
-									<option value="nao-iniciado">Não iniciado</option>
-								</select>
-							</div>
-							<button id="btn-form">Enviar</button>
-						</form>
+				<div id="janela-tarefas">
+					<div class="conteudo">
+						<div class="botao-fechar">
+							<button id="fechar-janela">Fechar</button>
+						</div>
+						<h2>Adicionar nova tarefa</h2>
+						<div class="tarefaForm">
+
+
+							<form id="formTarefa">
+								<div class="nome">
+									<label for="tituloTarefa">Nome*</label> <input type="text"
+										class="form-control" id="tituloTarefa"
+										placeholder="Nome da tarefa">
+								</div>
+								<div class="desc">
+									<label for="descTarefa">Senha</label> <input type="text"
+										class="form-control" id="descTarefa" placeholder="Descrição">
+								</div>
+								<div class="status">
+									<select id="statusTarefa">
+										<option selected="selected">Selecione o status</option>
+										<option value="concluido">Concluído</option>
+										<option value="em-andamento">Em andamento</option>
+										<option value="nao-iniciado">Não iniciado</option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn-primary" id="btn-form">Enviar</button>
+							</form>
+
+
+
+							<!-- 							<form id="formTarefa"> -->
+							<!-- 								<div class="nome"> -->
+							<!-- 									<label for="tituloTarefa">Titulo* </label> <input type="text" -->
+							<!-- 										id="tituloTarefa" required="required"> -->
+							<!-- 								</div> -->
+							<!-- 								<div class="desc"> -->
+							<!-- 									<label for="descTarefa">Descrição </label> <input type="text" -->
+							<!-- 										id="descTarefa"> -->
+							<!-- 								</div> -->
+							<!-- 								<div class="status"> -->
+							<!-- 									<select id="statusTarefa"> -->
+							<!-- 										<option selected="selected">Selecione o status</option> -->
+							<!-- 										<option value="concluido">Concluído</option> -->
+							<!-- 										<option value="em-andamento">Em andamento</option> -->
+							<!-- 										<option value="nao-iniciado">Não iniciado</option> -->
+							<!-- 									</select> -->
+							<!-- 								</div> -->
+							<!-- 								<button id="btn-form">Enviar</button> -->
+							<!-- 							</form> -->
+
+
+						</div>
 					</div>
 				</div>
+
 			</div>
+
+
 
 		</div>
 

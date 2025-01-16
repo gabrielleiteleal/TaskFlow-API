@@ -4,13 +4,10 @@ const descTarefa = document.getElementById('descTarefa');
 const statusTarefa = document.getElementById('statusTarefa');
 const id_usuario = localStorage.getItem('id_usuario');
 const janela = document.getElementById('janela-tarefas');
-//const idTarefa = button.getAttribute('data-id');
 
 function abrirJanela(acao, button = null) {
 
-
 	const fechar = document.getElementById('fechar-janela');
-
 
 	janela.style.display = "block";
 
@@ -24,8 +21,8 @@ function abrirJanela(acao, button = null) {
 		recuperarTarefa(idTarefa);
 	}
 
+	formTarefa.addEventListener('submit', async (event) => {
 
-	formTarefa.onsubmit = function(event) {
 		event.preventDefault();
 
 		if (acao === 'criar') {
@@ -34,8 +31,7 @@ function abrirJanela(acao, button = null) {
 		} else if (acao === 'editar') {
 			recuperarTarefa(idTarefa);
 		}
-	}
-
+	});
 }
 
 async function criarTarefa() {
@@ -73,19 +69,15 @@ async function criarTarefa() {
 		console.log('Erro ao criar nova tarefa: ' + error);
 		alert('Erro ao se conectar com a API');
 	}
-
 }
 
 async function editarTarefa(idTarefa) {
-
-	//	recuperarTarefa(idTarefa);
 
 	if (tituloTarefa.value.trim() === "") {
 		alert('Preencha o campo Título!');
 		tituloTarefa.focus();
 		return false;
 	}
-
 
 	try {
 
@@ -112,12 +104,10 @@ async function editarTarefa(idTarefa) {
 			alert('tafera não editada');
 		}
 
-
 	} catch (error) {
 		console.log('Erro ao editar tarefa: ' + error);
 		alert('Erro ao se conectar com a API (editarTarefa())');
 	}
-
 }
 
 async function deletarTarefa(button) {
@@ -126,9 +116,7 @@ async function deletarTarefa(button) {
 
 	let resposta = confirm("Confirmar exclusão da tarefa?")
 	if (resposta === true) {
-
 		try {
-
 			const response = await fetch('http://localhost:8080/tarefa/' + id, {
 				method: 'DELETE',
 				headers: { 'Content-Type': 'application/json' }
@@ -136,7 +124,6 @@ async function deletarTarefa(button) {
 
 			if (response.ok) {
 				alert('Tarefa excluida com sucesso!');
-				//				atualizarListaTarefas();
 			} else {
 				const errorData = await response.json();
 				console.log('Erro: ', errorData.message);
@@ -147,9 +134,7 @@ async function deletarTarefa(button) {
 			console.log('Erro ao excluir tarefa: ' + error);
 			alert('Erro ao se conectar com a API');
 		}
-
 	}
-
 }
 
 async function recuperarTarefa(idTarefa) {
@@ -180,7 +165,6 @@ async function recuperarTarefa(idTarefa) {
 		console.error('Erro ao conectar-se com a API: ', error);
 		alert('Erro ao se conectar com o servidor.');
 	}
-
 }
 
 function atualizarStatus(selectElement) {

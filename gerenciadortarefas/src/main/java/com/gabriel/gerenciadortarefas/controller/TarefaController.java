@@ -42,6 +42,11 @@ public class TarefaController {
 	public ResponseEntity<Tarefa> recuperarTarefa(@PathVariable Integer id) {
 		return ResponseEntity.status(200).body(tarefaService.recuperarTarefa(id));
 	}
+	
+	@GetMapping("/usuario/{id_usuario}")
+	public List<Tarefa> recuperarTarefaPorUsuario(@PathVariable Integer id_usuario){
+		return tarefaService.recuperarTarefaPorUsuario(id_usuario);
+	}
 
 	@PostMapping("/criar")
 	public ResponseEntity<?> criarTarefa(@RequestBody TarefaDTO tarefaDTO) {

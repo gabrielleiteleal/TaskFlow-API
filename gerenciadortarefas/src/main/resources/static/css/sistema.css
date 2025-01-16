@@ -20,8 +20,8 @@ html, body {
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	background-color: orange;
 	gap: 10px;
+	background-color: #dfdfdf;
 }
 
 .center .top {
@@ -30,24 +30,36 @@ html, body {
 	justify-content: center;
 }
 
+.top h2 {
+	background-color: #97c9ff;
+	padding: 20px 200px;
+	border-radius: 15px;
+	font-size: 30px;
+}
+
 .center .bottom {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
 	height: 90%;
+	gap: 20px;
 }
 
 .sidebar {
+	position: relative;
+	top: 50%;
+	transform: translateY(-55%);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 25%;
-	height: 90%;
-	background-color: gray;
+	height: 70%;
+	background-color: #97c9ff;
 	width: 25%;
+	border: 1px solid black;
 }
 
-.sidebar .container-icon {
+.sidebar .container-img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -56,7 +68,7 @@ html, body {
 	height: auto;
 }
 
-.container-icon .user-icon {
+.container-img .user-img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -87,21 +99,26 @@ html, body {
 	height: 100%;
 	justify-content: space-around;
 	background-color: white;
-	justify-content: space-around;
+	border: none;
 }
 
 .user-id {
+	height: 15%;
 	border-radius: 20px;
+	background-color: #ffdddd;
 }
 
 .user-id h3 {
-	font-size: 20px;
+	font-size: 24px;
+	transition: 0.3s;
 }
 
 .dados {
 	flex-direction: column;
-	height: 80px;
+	height: 30%;
 	border-radius: 10px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .dados .userName, .dados .userEmail {
@@ -113,7 +130,8 @@ html, body {
 }
 
 .dados .userName h3, .dados .userEmail h3 {
-	font-size: 20px;
+	font-size: 24px;
+	transition: 0.3s;
 }
 
 .icons {
@@ -121,22 +139,30 @@ html, body {
 	flex-direction: row;
 	justify-content: space-around;
 	border: none;
+	height: 20%;
+	transition: 0.3s;
 }
 
 .icons button {
-	width: 50px;
-	height: 35px;
+	width: 20%;
+	height: 65%;
 	border-radius: 5px;
 	border: 1px solid black;
 	background-color: #97c9ff;
 }
 
-.icons button:hover{
+.icons button img {
+	width: auto;
+	height: 50%;
+	transition: 0.3s;
+}
+
+.icons button:hover {
 	cursor: pointer;
 	background-color: #7dbbff;
 }
 
-.icons button:active{
+.icons button:active {
 	background-color: #66aeff;
 }
 
@@ -148,7 +174,7 @@ html, body {
 }
 
 .table-bordered {
-	background-color: white;
+	background-color: #ceeeff;
 }
 
 .table-bordered thead {
@@ -156,12 +182,44 @@ html, body {
 	top: 0;
 	z-index: 1;
 	background-color: white;
-	border: 1px solid black;
 }
 
-.table-borderes select {
-	width: 100%;
-	height: 100%;
+.table-striped tbody tr:nth-of-type(odd) {
+	background-color: #b0d6ff;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+	background-color: #95c8ff;
+}
+
+.table-hover tbody tr:hover {
+	background-color: #66aeff;
+}
+
+/* .table-bordered select { */
+/* 	width: 100%; */
+/* 	height: 100%; */
+/* } */
+.buttons-edit {
+	display: flex;
+	justify-content: space-around;
+}
+
+.buttons-edit button {
+	width: 35px;
+	height: 35px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background-color: white;
+}
+
+.buttons-edit button:hover {
+	background-color: #e2e2e2;
+	cursor: pointer;
+}
+
+.buttons-edit button:active {
+	background-color: #cfcfcf;
 }
 
 .status-concluido {
@@ -180,24 +238,101 @@ html, body {
 }
 
 #janela-tarefas {
-	display: none;
-	position: absolute;
-	top: 50%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	top: 50%;
+	transform: translate(-50%, -70%);
 	z-index: 1;
-	width: 50%;
-	height: 50%;
+	width: 45%;
+	height: 55%;
 	background-color: gray;
 	color: white;
 }
 
+#janela-tarefas .conteudo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	background-color: orange;
+	gap: 10px;
+	height: 100%;
+}
+
+.botao-fechar {
+	position: absolute;
+	top: 0;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	padding: 10px;
+}
+
 #fechar-janela {
-	float: right;
-	width: auto;
-	height: 35px;
-	margin: 15px;
+	width: 40px;
+	height: 40px;
 	border: none;
+	border-radius: 50%;
 	background-color: red;
 	color: white;
+}
+.conteudo h2 {
+	margin: 10px;
+	font-size: 28px;
+}
+
+.conteudo .tarefaForm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+}
+
+#formTarefa {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 60%;
+	height: 100%;
+	gap: 10px;
+	background-color: fuchsia;
+	font-size: 18px;
+}
+
+/* #formTarefa .nome, .desc { */
+/* 	display: flex; */
+/* 	justify-content: space-between;	 */
+/* 	width: 100%; */
+/* 	height: auto; */
+/* 	background-color: gray; */
+/* } */
+
+/* #btn-form{ */
+/* 	margin: 0 auto; */
+/* 	width: 50%; */
+/* } */
+
+@media screen and ( max-height : 770px) , screen and (max-width: 1400px)
+	{
+	.dados .userName h3, .dados .userEmail h3 {
+		font-size: 17px;
+		transition: 0.3s;
+	}
+	.user-id h3 {
+		font-size: 17px;
+		transition: 0.3s;
+	}
+	.icons {
+		height: 23%;
+		transition: 0.3s;
+	}
+	.icons button img {
+		height: 60%;
+		transition: 0.3s;
+	}
 }

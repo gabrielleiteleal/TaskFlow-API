@@ -16,7 +16,6 @@ public class UsuarioService {
 	private IUsuario repository;
 	private PasswordEncoder passwordEncoder;
 
-	
 	public UsuarioService(IUsuario repository) {
 		this.repository = repository;
 		this.passwordEncoder = new BCryptPasswordEncoder();
@@ -56,11 +55,11 @@ public class UsuarioService {
 		}
 		return false;
 	}
-	
+
 	public Usuario buscarPorEmail(String email) {
 		return repository.findByEmail(email).orElse(new Usuario());
 	}
-	
+
 	public Usuario buscarPorId(int id) {
 		return repository.findById(id).orElse(new Usuario());
 	}

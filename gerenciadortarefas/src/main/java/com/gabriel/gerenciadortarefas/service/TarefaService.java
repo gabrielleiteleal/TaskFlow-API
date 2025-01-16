@@ -20,26 +20,28 @@ public class TarefaService {
 		List<Tarefa> lista = repository.findAll();
 		return lista;
 	}
-	
+
 	public Tarefa recuperarTarefa(Integer id) {
 		return repository.findById(id).orElse(new Tarefa());
+	}
+	
+	public List<Tarefa> recuperarTarefaPorUsuario(Integer id_usuario){
+		return repository.findByUsuarioId(id_usuario);
 	}
 
 	public Tarefa criarTarefa(Tarefa tarefa) {
 		Tarefa novaTarefa = repository.save(tarefa);
 		return novaTarefa;
 	}
-	
+
 	public Tarefa editarTarefa(Tarefa tarefa) {
 		Tarefa novaTarefa = repository.save(tarefa);
 		return novaTarefa;
 	}
-	
-	public Boolean excluirTarefa (Integer id) {
+
+	public Boolean excluirTarefa(Integer id) {
 		repository.deleteById(id);
 		return true;
 	}
-	
-	
 
 }

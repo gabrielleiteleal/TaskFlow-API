@@ -23,9 +23,16 @@ public class SistemaController {
 	public String sistema(HttpSession session, Model model) {
 
 		Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+		
+		if(usuario == null) {
+			return "redirect:/login";
+		}
+		
 		model.addAttribute("usuario", usuario);
+		
+		String url = TAREFA_ENDPOINT + "/usuario/" + usuario.getId();
 
-		Tarefa[] tarefas = restTemplate.getForObject(TAREFA_ENDPOINT, Tarefa[].class);
+		Tarefa[] tarefas = restTemplate.getForObject(url, Tarefa[].class);
 		model.addAttribute("tarefas", tarefas);
 
 		return "sistema";

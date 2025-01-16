@@ -29,7 +29,7 @@ public class Tarefa {
 
 	@ManyToOne
 	@JoinColumn(name = "id_usuario", nullable = false)
-	private Usuario id_usuario;
+	private Usuario usuario;
 
 	public int getId_tarefa() {
 		return id_tarefa;
@@ -64,17 +64,17 @@ public class Tarefa {
 	}
 
 	public Usuario getUsuario() {
-		return id_usuario;
+		return usuario;
 	}
 
-	public void setUsuario(Usuario id_usuario) {
-		this.id_usuario = id_usuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override
 	public String toString() {
 		return "Tarefa [id_tarefa=" + id_tarefa + ", titulo=" + titulo + ", descricao=" + descricao + ", status="
-				+ status + ", id_usuario=" + id_usuario + "]";
+				+ status + ", id_usuario=" + usuario + "]";
 	}
 
 }

@@ -31,7 +31,6 @@ public class UsuarioController {
 
 	public UsuarioController(UsuarioService usuarioService) {
 		this.usuarioService = usuarioService;
-
 	}
 
 	@GetMapping
@@ -59,20 +58,18 @@ public class UsuarioController {
 	public ResponseEntity<?> validarUsuario(@RequestBody Usuario usuario, HttpSession session) {
 		Boolean senhaValida = usuarioService.validarUsuario(usuario.getEmail(), usuario.getSenha());
 		Map<String, String> response = new HashMap<>();
-//		HttpHeaders headers = new HttpHeaders();
 
 		if (!senhaValida) {
 			response.put("message", "Credenciais inválidas");
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
 		}
-		
+
 		Usuario usuarioEncontrado = usuarioService.buscarPorEmail(usuario.getEmail());
 		session.setAttribute("usuarioLogado", usuarioEncontrado);
 
 		response.put("redirectUrl", "/sistema");
 		String redirect = "/sistema";
 
-//		headers.setLocation(URI.create("/sistema"));
 		return ResponseEntity.ok(Map.of("redirectUrl", redirect, "id", usuarioEncontrado.getId()));
 	}
 
