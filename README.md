@@ -1,1 +1,2 @@
-API RESTful para Gerenciamento de Tarefas
+API RESTful para Gerenciamento de Tarefas - Em andamento
+
