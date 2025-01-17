@@ -43,6 +43,7 @@ html, body {
 	gap: 20px;
 	height: 90%;
 	gap: 20px;
+	overflow: hidden;
 }
 
 .sidebar {
@@ -196,10 +197,6 @@ html, body {
 	background-color: #66aeff;
 }
 
-/* .table-bordered select { */
-/* 	width: 100%; */
-/* 	height: 100%; */
-/* } */
 .buttons-edit {
 	display: flex;
 	justify-content: space-around;
@@ -222,45 +219,20 @@ html, body {
 	background-color: #cfcfcf;
 }
 
-.status-concluido {
-	background-color: #d4edda;
-	color: #155724;
-}
+/* .status-concluido { */
+/* 	background-color: #d4edda; */
+/* 	color: #155724; */
+/* } */
 
-.status-em-andamento {
-	background-color: #fff3cd;
-	color: #856404;
-}
+/* .status-em-andamento { */
+/* 	background-color: #fff3cd; */
+/* 	color: #856404; */
+/* } */
 
-.status-nao-iniciado {
-	background-color: gray;
-	color: black;
-}
-
-#janela-tarefas {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -70%);
-	z-index: 1;
-	width: 45%;
-	height: 55%;
-	background-color: gray;
-	color: white;
-}
-
-#janela-tarefas .conteudo {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	background-color: orange;
-	gap: 10px;
-	height: 100%;
-}
+/* .status-nao-iniciado { */
+/* 	background-color: gray; */
+/* 	color: black; */
+/* } */
 
 .botao-fechar {
 	position: absolute;
@@ -272,15 +244,45 @@ html, body {
 }
 
 #fechar-janela {
-	width: 40px;
-	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 30px;
 	border: none;
-	border-radius: 50%;
+	border-radius: 6px;
+	cursor: pointer;
 	background-color: red;
+}
+
+#fechar-janela img{
+	width: 100%;
+	height: auto;
+}
+
+#janela-tarefas {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	width: 38%;
+	height: 50%;
 	color: white;
 }
+
+#janela-tarefas .conteudo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: orange;
+	height: auto;
+	padding: 10px;
+}
+
 .conteudo h2 {
-	margin: 10px;
 	font-size: 28px;
 }
 
@@ -288,34 +290,39 @@ html, body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 10px;
 	width: 100%;
-	height: 100%;
-	background-color: blue;
 }
 
 #formTarefa {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: 60%;
+	align-items: center;
+	width: 100%;
 	height: 100%;
 	gap: 10px;
 	background-color: fuchsia;
 	font-size: 18px;
+	padding: 10px;
 }
 
-/* #formTarefa .nome, .desc { */
-/* 	display: flex; */
-/* 	justify-content: space-between;	 */
-/* 	width: 100%; */
-/* 	height: auto; */
-/* 	background-color: gray; */
-/* } */
+#formTarefa .nome label, .desc label, .status label {
+	width: 100%;
+	text-align: left;
+	padding-left: 10px;
+}
 
-/* #btn-form{ */
-/* 	margin: 0 auto; */
-/* 	width: 50%; */
-/* } */
+#formTarefa .status{
+	display: flex;
+	flex-direction: column;
+}
+
+#statusTarefa{
+	border-radius: 10px;
+	font-size: 90%;
+	cursor: pointer;
+}
 
 @media screen and ( max-height : 770px) , screen and (max-width: 1400px)
 	{

@@ -93,16 +93,17 @@
 				<div id="janela-tarefas">
 					<div class="conteudo">
 						<div class="botao-fechar">
-							<button id="fechar-janela">Fechar</button>
+							<button id="fechar-janela">
+								<img src="../assets/icons/x-square.svg">
+							</button>
 						</div>
 						<h2>Adicionar nova tarefa</h2>
 						<div class="tarefaForm">
 
-
 							<form id="formTarefa">
 								<div class="nome">
 									<label for="tituloTarefa">Nome*</label> <input type="text"
-										class="form-control" id="tituloTarefa"
+										class="form-control" id="tituloTarefa" required="required"
 										placeholder="Nome da tarefa">
 								</div>
 								<div class="desc">
@@ -110,11 +111,11 @@
 										class="form-control" id="descTarefa" placeholder="Descrição">
 								</div>
 								<div class="status">
-									<select id="statusTarefa">
-										<option selected="selected">Selecione o status</option>
+									<label>Selecione um status</label> <select id="statusTarefa">
+										<option value="nao-iniciado" selected="selected">Não
+											iniciado</option>
 										<option value="concluido">Concluído</option>
 										<option value="em-andamento">Em andamento</option>
-										<option value="nao-iniciado">Não iniciado</option>
 									</select>
 								</div>
 								<button type="submit" class="btn btn-primary" id="btn-form">Enviar</button>
