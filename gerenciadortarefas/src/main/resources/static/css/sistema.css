@@ -6,6 +6,7 @@
 
 html, body {
 	height: 100%;
+	overflow: hidden;
 }
 
 .tabela, th, td {
@@ -21,7 +22,7 @@ html, body {
 	height: 100%;
 	text-align: center;
 	gap: 10px;
-	background-color: #dfdfdf;
+	background-color: #95B2B0;
 }
 
 .center .top {
@@ -31,10 +32,12 @@ html, body {
 }
 
 .top h2 {
-	background-color: #97c9ff;
+	background-color: #647aa3;
 	padding: 20px 200px;
 	border-radius: 15px;
 	font-size: 30px;
+	color: white;
+	border: 1px solid #4d5f80;
 }
 
 .center .bottom {
@@ -55,7 +58,7 @@ html, body {
 	align-items: center;
 	width: 25%;
 	height: 70%;
-	background-color: #97c9ff;
+	background-color: #647AA3;
 	width: 25%;
 	border: 1px solid black;
 }
@@ -73,16 +76,14 @@ html, body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 140px;
-	height: 140px;
 	border-radius: 50%;
-	overflow: hidden;
-	align-items: center;
 	width: 150px;
 	height: 150px;
-	border-radius: 50%;
 	overflow: hidden;
-	background-color: white;
+	background-color: #cfcfcf;
+	background-image: url("../assets/images/perfil.png");
+	background-size: contain;
+	background-position: center;
 }
 
 .user-info, .user-id, .dados, .icons {
@@ -106,7 +107,7 @@ html, body {
 .user-id {
 	height: 15%;
 	border-radius: 20px;
-	background-color: #ffdddd;
+	background-color: #ddbfd5;
 }
 
 .user-id h3 {
@@ -149,7 +150,7 @@ html, body {
 	height: 65%;
 	border-radius: 5px;
 	border: 1px solid black;
-	background-color: #97c9ff;
+	background-color: #95c8ff;
 }
 
 .icons button img {
@@ -186,15 +187,15 @@ html, body {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-	background-color: #b0d6ff;
+	background-color: #c6c1c6;
 }
 
 .table-striped tbody tr:nth-of-type(even) {
-	background-color: #95c8ff;
+	background-color: #dedade;
 }
 
 .table-hover tbody tr:hover {
-	background-color: #66aeff;
+	background-color: #c1bdc1;
 }
 
 .buttons-edit {
@@ -219,21 +220,6 @@ html, body {
 	background-color: #cfcfcf;
 }
 
-/* .status-concluido { */
-/* 	background-color: #d4edda; */
-/* 	color: #155724; */
-/* } */
-
-/* .status-em-andamento { */
-/* 	background-color: #fff3cd; */
-/* 	color: #856404; */
-/* } */
-
-/* .status-nao-iniciado { */
-/* 	background-color: gray; */
-/* 	color: black; */
-/* } */
-
 .botao-fechar {
 	position: absolute;
 	top: 0;
@@ -255,7 +241,7 @@ html, body {
 	background-color: red;
 }
 
-#fechar-janela img{
+#fechar-janela img {
 	width: 100%;
 	height: auto;
 }
@@ -263,10 +249,11 @@ html, body {
 #janela-tarefas {
 	position: absolute;
 	display: flex;
+	opacity: 0;
 	flex-direction: column;
 	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	top: 100%;
+	transform: translate(-50%, 0);
 	z-index: 1;
 	width: 38%;
 	height: 50%;
@@ -277,9 +264,11 @@ html, body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: orange;
+	background-color: #3576ce;
 	height: auto;
 	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid black;
 }
 
 .conteudo h2 {
@@ -302,9 +291,10 @@ html, body {
 	width: 100%;
 	height: 100%;
 	gap: 10px;
-	background-color: fuchsia;
+	background-color: #1e4579;
 	font-size: 18px;
 	padding: 10px;
+	border-radius: 10px;
 }
 
 #formTarefa .nome label, .desc label, .status label {
@@ -313,12 +303,12 @@ html, body {
 	padding-left: 10px;
 }
 
-#formTarefa .status{
+#formTarefa .status {
 	display: flex;
 	flex-direction: column;
 }
 
-#statusTarefa{
+#statusTarefa {
 	border-radius: 10px;
 	font-size: 90%;
 	cursor: pointer;

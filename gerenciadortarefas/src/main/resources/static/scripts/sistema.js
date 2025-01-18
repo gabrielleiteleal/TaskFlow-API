@@ -9,10 +9,17 @@ function abrirJanela(acao, button = null) {
 
 	const fechar = document.getElementById('fechar-janela');
 
-	janela.style.display = "block";
+	janela.style.display = "flex";
+	janela.style.top = "50%";
+	janela.style.transform = "translate(-50%, -50%)";
+	janela.style.opacity = "1";
+	janela.style.transition = "0.5s";
 
 	fechar.onclick = function() {
-		janela.style.display = "none";
+		janela.style.top = "100%";
+		janela.style.transform = "translate(-50%, 0)";
+		janela.style.opacity = "0";
+		janela.style.transition = "0.5s";
 		formTarefa.reset();
 	}
 
@@ -21,7 +28,10 @@ function abrirJanela(acao, button = null) {
 		recuperarTarefa(idTarefa);
 	}
 
-	formTarefa.addEventListener('submit', async (event) => {
+	formTarefa.removeEventListener('submit', handleSubmit);
+	formTarefa.addEventListener('submit', handleSubmit);
+
+	async function handleSubmit(event) {
 
 		event.preventDefault();
 
@@ -31,7 +41,7 @@ function abrirJanela(acao, button = null) {
 		} else if (acao === 'editar') {
 			recuperarTarefa(idTarefa);
 		}
-	});
+	};
 }
 
 async function criarTarefa() {
@@ -56,7 +66,7 @@ async function criarTarefa() {
 
 		console.log({ titulo: tituloTarefa.value, desc: descTarefa.value, status: statusTarefa.value, id: id_usuario })
 		if (response.ok) {
-			alert('Nova tarefa adicinonada com sucesso!');
+			alert('Nova tarefa adicionada com sucesso!');
 			formTarefa.reset();
 			janela.style.display = "none";
 		} else {
