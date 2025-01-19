@@ -63,5 +63,4 @@ public class UsuarioService {
 	public Usuario buscarPorId(int id) {
 		return repository.findById(id).orElse(new Usuario());
 	}
-
 }

@@ -13,13 +13,13 @@ function abrirJanela(acao, button = null) {
 	janela.style.top = "50%";
 	janela.style.transform = "translate(-50%, -50%)";
 	janela.style.opacity = "1";
-	janela.style.transition = "0.5s";
+	janela.style.transition = "0.4s";
 
 	fechar.onclick = function() {
 		janela.style.top = "100%";
 		janela.style.transform = "translate(-50%, 0)";
 		janela.style.opacity = "0";
-		janela.style.transition = "0.5s";
+		janela.style.transition = "0.4s";
 		formTarefa.reset();
 	}
 

@@ -76,5 +76,4 @@ public class Tarefa {
 		return "Tarefa [id_tarefa=" + id_tarefa + ", titulo=" + titulo + ", descricao=" + descricao + ", status="
 				+ status + ", id_usuario=" + usuario + "]";
 	}
-
 }

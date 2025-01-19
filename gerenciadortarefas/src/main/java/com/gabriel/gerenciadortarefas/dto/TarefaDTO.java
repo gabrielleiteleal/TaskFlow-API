@@ -47,5 +47,4 @@ public class TarefaDTO {
 	public void setId_tarefa(Integer id_tarefa) {
 		this.id_tarefa = id_tarefa;
 	}
-
 }

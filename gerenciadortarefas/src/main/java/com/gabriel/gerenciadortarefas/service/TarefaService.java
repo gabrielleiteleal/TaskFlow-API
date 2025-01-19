@@ -24,8 +24,8 @@ public class TarefaService {
 	public Tarefa recuperarTarefa(Integer id) {
 		return repository.findById(id).orElse(new Tarefa());
 	}
-	
-	public List<Tarefa> recuperarTarefaPorUsuario(Integer id_usuario){
+
+	public List<Tarefa> recuperarTarefaPorUsuario(Integer id_usuario) {
 		return repository.findByUsuarioId(id_usuario);
 	}
 
@@ -43,5 +43,4 @@ public class TarefaService {
 		repository.deleteById(id);
 		return true;
 	}
-
 }
