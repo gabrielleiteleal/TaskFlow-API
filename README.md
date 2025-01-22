@@ -1,4 +1,4 @@
-# TaskFlow API
+# TaskFlow API.
 
 ![Badge em Desenvolvimento](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
 
