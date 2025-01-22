@@ -40,6 +40,7 @@ async function validar() {
 			localStorage.setItem('id_usuario', id_usuario);
 			alert("Login realizado com sucesso!");
 			console.log(data);
+			console.log(data.redirectUrl);
 			window.location.href = data.redirectUrl;
 			limpar();
 		} else {
