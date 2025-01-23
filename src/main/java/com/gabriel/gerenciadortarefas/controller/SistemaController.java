@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class SistemaController {
 
-	private final String TAREFA_ENDPOINT = "http://localhost:8080/tarefa";
+	private final String TAREFA_ENDPOINT = "https://taskflow-api-production.up.railway.app/tarefa";
 
 	@Autowired
 	private RestTemplate restTemplate;
@@ -23,6 +23,7 @@ public class SistemaController {
 	public String sistema(HttpSession session, Model model) {
 		Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
 		if (usuario == null) {
+			System.out.println("Usuário não encontrado na sessão");
 			return "redirect:/login";
 		}
 		model.addAttribute("usuario", usuario);
