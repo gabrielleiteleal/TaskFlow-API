@@ -20,7 +20,7 @@ async function validar() {
 	}
 
 	try {
-		const response = await fetch('http://localhost:8080/usuario/validacao', {
+		const response = await fetch('https://taskflow-api-production.up.railway.app/usuario/validacao', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({

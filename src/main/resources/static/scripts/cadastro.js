@@ -26,7 +26,7 @@ async function enviar() {
 
 
 	try {
-		const response = await fetch('http://localhost:8080/usuario/cadastro', {
+		const response = await fetch('https://taskflow-api-production.up.railway.app/usuario/cadastro', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({

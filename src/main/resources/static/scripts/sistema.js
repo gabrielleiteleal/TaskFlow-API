@@ -53,7 +53,7 @@ async function criarTarefa() {
 	}
 
 	try {
-		const response = await fetch('http://localhost:8080/tarefa/criar', {
+		const response = await fetch('https://taskflow-api-production.up.railway.app/tarefa/criar', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
@@ -91,7 +91,7 @@ async function editarTarefa(idTarefa) {
 
 	try {
 
-		const response = await fetch('http://localhost:8080/tarefa/editar', {
+		const response = await fetch('https://taskflow-api-production.up.railway.app/tarefa/editar', {
 			method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
@@ -127,7 +127,7 @@ async function deletarTarefa(button) {
 	let resposta = confirm("Confirmar exclusão da tarefa?")
 	if (resposta === true) {
 		try {
-			const response = await fetch('http://localhost:8080/tarefa/' + id, {
+			const response = await fetch('https://taskflow-api-production.up.railway.app/tarefa/' + id, {
 				method: 'DELETE',
 				headers: { 'Content-Type': 'application/json' }
 			});
@@ -150,7 +150,7 @@ async function deletarTarefa(button) {
 async function recuperarTarefa(idTarefa) {
 
 	try {
-		const response = await fetch('http://localhost:8080/tarefa/' + idTarefa, {
+		const response = await fetch('https://taskflow-api-production.up.railway.app' + idTarefa, {
 			method: 'GET',
 			headers: { 'Content-Type': 'application/json' }
 		})
