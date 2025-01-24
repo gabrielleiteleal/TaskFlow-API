@@ -1,6 +1,6 @@
 # TaskFlow API.
 
-![Badge em Desenvolvimento](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+![Badge Online](https://img.shields.io/badge/Status-Online-green)
 
 ## Índice
 
@@ -19,23 +19,24 @@ organizem, monitorem e concluam suas atividades de forma eficiente. Ideal para d
 
 ## Capturas de tela
 
-...
+### Swagger UI
+
 
 ## Funcionalidades Principais
 
-- Gerenciamento de tarefas (CRUD)
-- Gerenciamento de status
-- Organização de tarefas
-- Gerenciamento de usuarios
+- 🛠 **Gerenciamento de tarefas (CRUD)**
+- ✅ **Gerenciamento de status**
+- 📂 **Organização de tarefas**
+- 🔐 **Gerenciamento de usuarios**
 
 ## Tecnologias Utilizadas
 
-- [Java](https://www.java.com/pt-BR/)
-- [Spring Boot](https://spring.io/projects/spring-boot)
-- [Spring Security](https://spring.io/projects/spring-security)
-- [Hibernate](https://hibernate.org)
-- [MySQL](https://www.mysql.com)
-- [Swagger](https://swagger.io)
+- **[Java](https://www.java.com/pt-BR/) :** Linguagem principal para o desenvolvimento da API.
+- **[Spring Boot](https://spring.io/projects/spring-boot) :** Framework para criar aplicações robustas e escaláveis.
+- **[Spring Security](https://spring.io/projects/spring-security) :** Para autenticação e autorização dos usuários.
+- **[Hibernate](https://hibernate.org) :** Gerenciamento de persistência e mapeamento objeto-relacional.
+- **[MySQL](https://www.mysql.com) :** Banco de dados relacional para o armazenamento de dados.
+- **[Swagger](https://swagger.io) :** Documentação interativa da API para facilitar testes e integração.
 
 <p>
   <img src ="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" title="Java" alt="Java" width="55" height="55"/>&nbsp;
@@ -47,11 +48,10 @@ organizem, monitorem e concluam suas atividades de forma eficiente. Ideal para d
 
 ## Acesso ao sistema
 
-1 - Link para acessar o sistema: https://taskflow-api-production.up.railway.app</br>
+- **API Online:** [TaskFlow API](https://taskflow-api-production.up.railway.app)</br>
+- **Swagger UI:** [Documentação Interativa](https://taskflow-api-production.up.railway.app/swagger-ui/index.html)
 
-2 - Link para testar a API: https://taskflow-api-production.up.railway.app/swagger-ui/index.html
-
-Obs: O sistema está em modo 'sleeping', caso não apareça basta recarregar a página.
+**Nota:** O sistema pode estar em modo 'sleeping'. Caso não carrege, recarregue a página.
 
 ## Licença
 
