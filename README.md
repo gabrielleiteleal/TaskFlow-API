@@ -20,7 +20,10 @@ organizem, monitorem e concluam suas atividades de forma eficiente. Ideal para d
 ## Capturas de tela
 
 ### Swagger UI
-
+<div style="display: flex;">
+<img src="https://raw.githubusercontent.com/gabrielleiteleal/TaskFlow-API/refs/heads/master/src/main/resources/static/assets/images/Teste%20POST%20-%20parameters.jpg" alt="" width="49%">
+<img src="https://raw.githubusercontent.com/gabrielleiteleal/TaskFlow-API/refs/heads/master/src/main/resources/static/assets/images/Teste%20POST%20-%20response.jpg" alt="" width="50%">
+</div>
 
 ## Funcionalidades Principais
 
