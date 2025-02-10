@@ -56,6 +56,13 @@ organizem, monitorem e concluam suas atividades de forma eficiente. Ideal para d
 
 **Nota:** O sistema pode estar em modo 'sleeping'. Caso não carrege, recarregue a página.
 
+## 🚀 Melhorias em andamento 
+Atualmente, estou implementando melhorias no front-end utilizando **React**. O objetivo é criar uma interface mais dinâmica e responsiva, melhorando a experiência do usuário.
+
+🔹**Status:** Em desenvolvimento</br>
+🔹**Tecnologias sendo usadas:** React, Bootstrap</br>
+🔹**Próximos passos:** Melhorar a navegação, adicionar estado global e otimizar a interface.
+
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
