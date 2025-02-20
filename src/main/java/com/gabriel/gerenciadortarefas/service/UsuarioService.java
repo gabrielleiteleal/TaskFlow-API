@@ -49,8 +49,6 @@ public class UsuarioService {
 		Optional<Usuario> usuarioOpcional = repository.findByEmail(email);
 		if (usuarioOpcional.isPresent()) {
 			String senhaArmezenada = usuarioOpcional.get().getSenha();
-//			System.out.println("Email recebido: " + email);
-//			System.out.println("Senha recebida: " + senha);
 			return passwordEncoder.matches(senha, senhaArmezenada);
 		}
 		return false;

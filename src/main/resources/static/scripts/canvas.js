@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Configuração de partículas
+
     const canvas = document.getElementById('particle-background');
     const ctx = canvas.getContext('2d');
 
-    // Ajustar tamanho do canvas
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
-    // Criar partículas
     const particles = [];
     const particleCount = 100;
 

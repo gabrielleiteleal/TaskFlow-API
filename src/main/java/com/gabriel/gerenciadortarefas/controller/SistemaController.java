@@ -1,6 +1,7 @@
 package com.gabriel.gerenciadortarefas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,10 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class SistemaController {
 
-	private final String TAREFA_ENDPOINT = "https://taskflow-api-production.up.railway.app/tarefa";
+	private final String URL_ONLINE = "https://taskflow-api-production.up.railway.app";
+	private final String URL_LOCAL = "http://localhost:8080";
+
+	private final String TAREFA_ENDPOINT = URL_ONLINE + "/tarefa";
 
 	@Autowired
 	private RestTemplate restTemplate;

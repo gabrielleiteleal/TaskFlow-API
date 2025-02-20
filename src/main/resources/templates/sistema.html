@@ -8,6 +8,7 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
+    <link href="/assets/images/icon.png" rel="icon" type="image/png">
     <link href="css/sistema.css" rel="stylesheet">
     <title>Gerenciamento de tarefas</title>
 </head>
@@ -20,12 +21,18 @@
 
     <div class="sidebar">
         <div class="icon-task"></div>
-        <div><button><img src="/assets/icons/list-task.svg"></button></div>
-        <div><button><img src="/assets/icons/file-earmark-bar-graph-fill.svg"></button></div>
+        <div>
+            <button><img src="/assets/icons/list-task.svg"></button>
+        </div>
+        <div>
+            <button><img src="/assets/icons/file-earmark-bar-graph-fill.svg"></button>
+        </div>
         <button id="btnCriarTarefa" onclick="abrirJanela('criar')">
             <img src="../assets/icons/plus-circle-fill.svg">
         </button>
-        <div><button><img src="/assets/icons/gear-fill.svg"></button></div>
+        <div>
+            <button onclick="abrirJanelaUsuario()"><img src="/assets/icons/gear-fill.svg"></button>
+        </div>
         <button onclick="sair()">
             <img src="../assets/icons/box-arrow-left.svg">
         </button>
@@ -43,38 +50,8 @@
         <div class="bottom">
 
 
-            <!--				<div class="container-img">-->
-            <!--					<div class="user-img"></div>-->
-            <!--				</div>-->
-
-            <!--				<div class="user-info">-->
-            <!--					<div class="user-id">-->
-            <!--						<h3>Id:</h3>-->
-            <!--						<h3 th:text="${usuario.id}"></h3>-->
-            <!--					</div>-->
-            <!--					<div class="dados">-->
-            <!--						<div class="userName">-->
-            <!--							<h3>Nome:</h3>-->
-            <!--							<h3 th:text="${usuario.nome}"></h3>-->
-            <!--						</div>-->
-            <!--						<div class="userEmail">-->
-            <!--							<h3>Email:</h3>-->
-            <!--							<h3 th:text="${usuario.email}"></h3>-->
-            <!--						</div>-->
-
-            <!--					</div>-->
-            <!--					<div class="icons">-->
-            <!--						<button onclick="sair()">-->
-            <!--							<img src="../assets/icons/box-arrow-left.svg">-->
-            <!--						</button>-->
-            <!--						<button id="btnCriarTarefa" onclick="abrirJanela('criar')">-->
-            <!--							<img src="../assets/icons/plus-square-fill.svg">-->
-            <!--						</button>-->
-            <!--					</div>-->
-            <!--				</div>-->
-
-
             <div class="container-tabela">
+
                 <table class="table table-bordered table-striped table-hover">
                     <thead>
                     <tr>
@@ -145,6 +122,42 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary" id="btn-form">Enviar</button>
                             </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="janela-usuario">
+                    <div class="conteudo-usuario">
+                        <div class="botao-fechar-usuario">
+                            <button id="fechar-janela-usuario">
+                                <img src="../assets/icons/x-square.svg">
+                            </button>
+                        </div>
+                        <h2>Dados do usuário</h2>
+                        <div class="dados">
+
+                            <div class="container-img">
+                                <div class="user-img"></div>
+                            </div>
+
+                            <div class="user-info">
+                                <div class="user-id">
+                                    <h3>Id:</h3>
+                                    <h3 th:text="${usuario.id}"></h3>
+                                </div>
+                                <div class="infos">
+                                    <div class="userName">
+                                        <h3>Nome:</h3>
+                                        <h3 th:text="${usuario.nome}"></h3>
+                                    </div>
+                                    <div class="userEmail">
+                                        <h3>Email:</h3>
+                                        <h3 th:text="${usuario.email}"></h3>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

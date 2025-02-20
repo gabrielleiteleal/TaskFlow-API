@@ -2,6 +2,9 @@ const form = document.getElementById('formLogin');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 
+const URL_LOCAL = "http://localhost:8080";
+const URL_ONLINE = "https://taskflow-api-production.up.railway.app";
+
 form.addEventListener('submit', async (event) => {
 	event.preventDefault();
 	await validar();
@@ -20,7 +23,7 @@ async function validar() {
 	}
 
 	try {
-		const response = await fetch('https://taskflow-api-production.up.railway.app/usuario/validacao', {
+		const response = await fetch(`${URL_ONLINE}/usuario/validacao`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
