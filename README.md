@@ -51,7 +51,7 @@ organizem, monitorem e concluam suas atividades de forma eficiente. Ideal para d
 
 ## Acesso ao sistema
 
-- **API Online:** [TaskFlow API](https://taskflow-api-production.up.railway.app)</br>
+- **API Online:** <a href="https://taskflow-api-production.up.railway.app" target="_blank">TaskFlow API</a></br>
 - **Swagger UI:** [Documentação Interativa](https://taskflow-api-production.up.railway.app/swagger-ui/index.html)
 
 **Nota:** O sistema pode estar em modo 'sleeping'. Caso não carrege, recarregue a página.
