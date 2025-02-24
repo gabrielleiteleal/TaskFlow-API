@@ -1,173 +1,201 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-	height: 100%;
-	background-color: rgb(227, 227, 227);
+    height: 100%;
+    background: linear-gradient(0deg, rgba(23, 125, 152, 1) 0%, rgba(221, 191, 213, 1) 100%);
+
+}
+
+.notificacao {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 0.5s ease-out
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/images/background-login.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
 }
 
 .container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
 }
 
 #formLogin {
-	border: 1px solid black;
-	border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	background-color: white;
-	width: 55%;
-	height: 55%;
-	aspect-ratio: 1/1;
-	transition: 0.5s;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    width: 55%;
+    height: 55%;
+    aspect-ratio: 1/1;
+    transition: 0.5s;
+    z-index: 1;
 }
 
 #formLogin .title {
-	height: 15%;
+    height: 15%;
 }
 
 #formLogin h2 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: linear-gradient(to right, transparent, black, transparent)
-		bottom/80% 2px no-repeat;
-	height: 100%;
-	color: #028e8e;
-	align-items: center;
-	cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, transparent, black, transparent) bottom/80% 2px no-repeat;
+    height: 100%;
+    color: #028e8e;
+    cursor: default;
 }
 
 #formLogin .inputs {
-	display: flex;
-	justify-content: center;
-	gap: 15px;
-	flex-grow: 4;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-grow: 4;
 }
 
 .inputs {
-	display: flex;
-	flex-direction: column;
-	margin: 10px;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
 }
 
 .inputs input {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 35px;
-	margin-top: -8px;
-	font-size: 11px;
-	padding-left: 10px;
-	transition: 0.3s;
-	border-radius: 10px;
-	border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 35px;
+    margin-top: -8px;
+    font-size: 11px;
+    padding-left: 10px;
+    transition: 0.3s;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 
 .inputs .button {
-	width: 90%;
-	margin: 10px 0;
-	background-color: #028e8e;
-	color: white;
-	border: none;
-	height: 35px;
-	border-radius: 18px;
+    width: 90%;
+    margin: 10px 0;
+    background-color: #028e8e;
+    color: white;
+    border: none;
+    height: 35px;
+    border-radius: 18px;
 }
 
 .inputs .button:hover {
-	cursor: pointer;
-	background-color: #028080;
+    cursor: pointer;
+    background-color: #028080;
 }
 
 .inputs .button:active {
-	background-color: #027373;
+    background-color: #027373;
 }
 
 .inputs input:focus {
-	font-size: 14px;
-	transition: 0.3s;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
 .email label, .senha label {
-	font-size: 18px;
-	border-radius: 10px;
+    font-size: 18px;
+    border-radius: 10px;
 }
 
 .email, .senha {
-	display: flex;
-	flex-direction: column;
-	margin: 5px auto;
-	width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+    width: 90%;
 }
 
 .cadastrar {
-	width: 100%;
-	flex-grow: 1;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	border-radius: 0 0 10px 10px;
-	background-color: rgb(220, 220, 220);
-	gap: 10px;
-	color: gray;
-	margin: 0 auto;
-	font-size: 100%;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    background-color: rgb(220, 220, 220);
+    gap: 10px;
+    color: gray;
+    margin: 0 auto;
+    font-size: 100%;
 }
 
 .cadastrar button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 80px;
-	height: 20px;
-	font-size: 13px;
-	font-weight: bold;
-	border: 1px solid gray;
-	border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 @media screen and (min-width: 1500px) , screen and (min-height: 850px) {
-	#formLogin {
-		width: 45%;
-		height: 45%;
-		transition: 0.5s;
-	}
-	#formLogin .inputs {
-		gap: 25px;
-	}
+    #formLogin {
+        width: 45%;
+        height: 45%;
+        transition: 0.5s;
+    }
+
+    #formLogin .inputs {
+        gap: 25px;
+    }
 }
 
 @media screen and (max-width: 1090px) , screen and (max-height: 600px) {
-	#formLogin {
-		width: 100%;
-		height: 60%;
-		aspect-ratio: 1/1;
-		transition: 0.5s;
-	}
-	.cadastrar {
-		gap: 0;
-		font-size: 100%;
-		transition: 0.3s;
-		justify-content: space-around;
-		font-size: 90%;
-		text-align: center;
-	}
-	.cadastrar button {
-		width: 75px;
-		height: 50px;
-		font-size: 13px;
-		font-weight: bold;
-		border: 1px solid gray;
-		border-radius: 15px;
-	}
+    #formLogin {
+        width: 100%;
+        height: 60%;
+        aspect-ratio: 1/1;
+        transition: 0.5s;
+    }
+
+    .cadastrar {
+        gap: 0;
+        transition: 0.3s;
+        justify-content: space-around;
+        font-size: 90%;
+        text-align: center;
+    }
+
+    .cadastrar button {
+        width: 75px;
+        height: 50px;
+        font-size: 13px;
+        font-weight: bold;
+        border: 1px solid gray;
+        border-radius: 15px;
+    }
 }

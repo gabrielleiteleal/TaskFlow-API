@@ -74,6 +74,7 @@ async function criarTarefa() {
         return false;
     }
 
+
     try {
         const response = await fetch(`${URL_ONLINE}/tarefa/criar`, {
             method: 'POST',
@@ -86,21 +87,28 @@ async function criarTarefa() {
             })
         });
 
-        console.log({titulo: tituloTarefa.value, desc: descTarefa.value, status: statusTarefa.value, id: id_usuario})
+        console.log({
+            titulo: tituloTarefa.value,
+            desc: descTarefa.value,
+            status: statusTarefa.value,
+            id: id_usuario
+        })
         if (response.ok) {
-            alert('Nova tarefa adicionada com sucesso!');
+            notificacao("Tarefa criada com sucesso!!", "#4CAF50");
             formTarefa.reset();
             janela.style.display = "none";
         } else {
+            notificacao("Tarefa não adicionada!", "#DC3545");
             const errorData = await response.json();
             console.log('Erro: ', errorData.message);
-            alert('tafera não adicionada');
         }
 
     } catch (error) {
         console.log('Erro ao criar nova tarefa: ' + error);
-        alert('Erro ao se conectar com a API');
+        notificacao("Erro ao se conectar com a API");
     }
+
+
 }
 
 async function editarTarefa(idTarefa) {
@@ -133,18 +141,18 @@ async function editarTarefa(idTarefa) {
             id: id_usuario
         })
         if (response.ok) {
-            alert('Tarefa editada com sucesso!');
+            notificacao("Tarefa editada com sucesso!!", "#4CAF50")
             formTarefa.reset();
             janela.style.display = "none";
         } else {
             const errorData = await response.json();
             console.log('Erro: ', errorData.message);
-            alert('tafera não editada');
+            notificacao("Tarefa não editada", "#DC3545");
         }
 
     } catch (error) {
         console.log('Erro ao editar tarefa: ' + error);
-        alert('Erro ao se conectar com a API (editarTarefa())');
+        notificacao("Erro ao se conectar com a API", "#DC3545");
     }
 }
 
@@ -161,16 +169,16 @@ async function deletarTarefa(button) {
             });
 
             if (response.ok) {
-                alert('Tarefa excluida com sucesso!');
+                notificacao("Tarefa excluída com sucesso!!", "#4CAF50");
             } else {
                 const errorData = await response.json();
+                notificacao("Erro ao excluir tarefa!", "#DC3545");
                 console.log('Erro: ', errorData.message);
-                alert('Erro ao exlcuir tarefa');
             }
 
         } catch (error) {
             console.log('Erro ao excluir tarefa: ' + error);
-            alert('Erro ao se conectar com a API');
+            notificacao("Erro ao se conectar com a API", "#DC3545");
         }
     }
 }
@@ -178,7 +186,7 @@ async function deletarTarefa(button) {
 async function recuperarTarefa(idTarefa) {
 
     try {
-        const response = await fetch(`${URL_ONLINE}/` + idTarefa, {
+        const response = await fetch(`${URL_ONLINE}/tarefa/` + idTarefa, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         })
@@ -196,13 +204,25 @@ async function recuperarTarefa(idTarefa) {
         } else {
             const errorData = await response.json();
             console.error('Erro ao recuperar tarefa: ', errorData.message);
-            alert('Erro ao recuperar os dados da tarefa');
+            notificacao("Erro ao recuperar dados da tarefa", "#DC3545");
         }
 
     } catch (error) {
         console.error('Erro ao conectar-se com a API: ', error);
-        alert('Erro ao se conectar com o servidor.');
+        notificacao("Erro ao se conectar com a API", "#DC3545");
     }
+}
+
+function notificacao(texto, cor) {
+    let notificacao = document.createElement("div");
+    notificacao.classList.add("notificacao");
+    notificacao.innerText = texto;
+    notificacao.style.backgroundColor = cor;
+    document.body.appendChild(notificacao);
+    setTimeout(() => {
+        notificacao.classList.add("fade-out");
+        setTimeout(() => notificacao.remove(), 500);
+    }, 3000);
 }
 
 function atualizarStatus(selectElement) {

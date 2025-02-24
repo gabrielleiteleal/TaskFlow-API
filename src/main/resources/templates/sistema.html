@@ -8,12 +8,14 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
-    <link href="/assets/images/icon.png" rel="icon" type="image/png">
+    <link href="/assets/images/TaskFlow-icon.ico" rel="icon" type="image/png">
     <link href="css/sistema.css" rel="stylesheet">
     <title>Gerenciamento de tarefas</title>
 </head>
 
 <body>
+
+<div class="background"></div>
 
 <canvas id="particle-background"></canvas>
 
@@ -40,7 +42,7 @@
 
     <div class="content">
         <div class="top">
-            <h2>Dashboard - Tarefas</h2>
+            <h2>Sistema de gerenciamento de tarefas</h2>
             <div class="pdf">
                 <button><img src="/assets/icons/filetype-pdf.svg"></button>
             </div>
@@ -102,7 +104,8 @@
                                 <div class="nome">
                                     <label for="tituloTarefa">Nome*</label> <input type="text"
                                                                                    class="form-control"
-                                                                                   id="tituloTarefa" required="required"
+                                                                                   id="tituloTarefa"
+                                                                                   required="required"
                                                                                    placeholder="Nome da tarefa">
                                 </div>
                                 <div class="desc">
@@ -112,7 +115,8 @@
                                                                                      placeholder="Descrição">
                                 </div>
                                 <div class="status">
-                                    <label for="statusTarefa">Selecione um status</label> <select id="statusTarefa">
+                                    <label for="statusTarefa">Selecione um status</label> <select
+                                        id="statusTarefa">
                                     <option value="nao-iniciado" selected="selected">Não
                                         iniciado
                                     </option>

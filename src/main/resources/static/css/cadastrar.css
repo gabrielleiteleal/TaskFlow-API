@@ -1,58 +1,70 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-	height: 100%;
+    height: 100%;
 }
 
 .center {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	height: 100%;
-	width: 100%;
-	padding: 0 20px;
-	background-color: white;
-	gap: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 0 50px;
+    background: linear-gradient(106deg, rgba(23, 125, 152, 1) 0%, rgba(221, 191, 213, 1) 100%);
+    gap: 20px;
 }
 
 .left {
-	background-color: #c9c9c9;
-	width: 60%;
-	padding: 80px 20px;
-	border-radius: 15px;
-	flex-basis: 60%;
+    background-color: #c9c9c9;
+    padding: 60px 20px;
+    border-radius: 15px;
+    flex-basis: 45%;
 }
 
 .right {
-	background-image: url("../assets/images/tela cadastro.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 40%;
-	height: 100%;
-	flex-basis: 40%;
+    background-image: url("../assets/images/Cadastro.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 50%;
+    flex-basis: 40%;
 }
 
 .img img {
-	width: 100%;
-	height: auto;
-	border-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
-.form-group input{
-	transition: 0.3s;
-	font-size: 15px;
+.voltar {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(23, 125, 152, 0.7);
 }
 
-.form-group input:focus{
-	transition: 0.3s;
-	font-size: 17px;
+.voltar a img {
+    width: 80%;
+    height: 80%;
+}
+
+.form-group input {
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.form-group input:focus {
+    transition: 0.3s;
+    font-size: 17px;
 }

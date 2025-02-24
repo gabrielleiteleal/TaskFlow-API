@@ -8,7 +8,7 @@ const URL_ONLINE = "https://taskflow-api-production.up.railway.app";
 
 form.addEventListener('submit', async (event) => {
 	event.preventDefault();
-	enviar();
+	await enviar();
 })
 
 async function enviar() {
